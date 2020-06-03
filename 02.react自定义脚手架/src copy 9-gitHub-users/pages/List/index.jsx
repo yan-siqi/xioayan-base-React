@@ -4,10 +4,10 @@ import axios from "axios";
 import "./index.css";
 export default class List extends Component {
   state = {
-    isFirstView: true,
-    isLoading: false,
-    users: null,
-    error: null,
+    isFirstView: true,//初始化显示
+    isLoading: false,//正在加载中
+    users: null,//代表请求成功的数据
+    error: null,//请求失败
   };
   componentDidMount() {
     //在发送请求之前

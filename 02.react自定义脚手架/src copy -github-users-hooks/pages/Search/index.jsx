@@ -1,21 +1,23 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PubSub from "pubsub-js";
-export default class Search extends Component {
-  state = {
+export default function Search() {
+ /*  state = {
     searchName: "",
-  };
-  handleChage = (e) => {
-    this.setState({
+  }; */
+  const[searchName,setSearchName]=useState('')
+  const handleChange = (e) => {
+/*     this.setState({
       searchName: e.target.value.trim(),
-    });
+    }); */
+    setSearchName(e.target.value.trim())
   };
-  handleClick = () => {
-    const { searchName } = this.state;
+  const handleClick = () => {
+    /* const { searchName } = this.state; */
     if (searchName) {
       PubSub.publish("SEARCHNAME", searchName);
     }
   };
-  render() {
+ 
     return (
       <section className="jumbotron">
         <h3 className="jumbotron-heading">Search Github Users</h3>
@@ -23,11 +25,10 @@ export default class Search extends Component {
           <input
             type="text"
             placeholder="enter the name you search"
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
-          <button onClick={this.handleClick}>Search</button>
+          <button onClick={handleClick}>Search</button>
         </div>
       </section>
     );
-  }
 }

@@ -1,0 +1,67 @@
+.model {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: pink; */
+  z-index: 99;
+}
+.model_mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.model_wrap {
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  top: 100px;
+  transform: translate(-50%);
+  background-color: #eee;
+  /* padding: 0, 10px; */
+  /* 自减模式 */
+  box-sizing: border-box;
+  border: 1px solid #000;
+  z-index: 10;
+}
+.model_wrap .header {
+  /*  padding: 10px; */
+  height: 50px;
+  display: flex;
+  /* 主轴居中 */
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.model_wrap .header h3 {
+  line-height: 50px;
+  margin: 0;
+  /* 侧轴居中 */
+  align-items: center;
+  font-weight: 300;
+  font-size: 16px;
+}
+.model_wrap .header button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 25px;
+  color: #666;
+}
+.model_wrap .content {
+  border-top: 1px solid #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 10px;
+}
+.model_wrap .footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  /* 使用flex布局 */
+  justify-content: flex-end;
+}
